@@ -11,6 +11,10 @@ use Codeception\Module\AMQP as AMQP_MODULE;
 class AMQP extends AMQP_MODULE
 {
 
+    public function _initialize()
+    {
+
+    }
 
     /**
      * Change AMPQ credentials and reinitialize connection.
@@ -41,6 +45,6 @@ class AMQP extends AMQP_MODULE
         if ($cleanup !== null) {
             $this->config['cleanup'] = $cleanup;
         }
-        $this->_initialize();
+        parent::_initialize();
     }
 }
